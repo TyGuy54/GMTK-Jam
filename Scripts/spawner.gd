@@ -4,14 +4,14 @@ extends Node2D
 @export var spawn_radius: float
 @export var spawn_interval: float
 
-var _spawn_timer: Timer
+var spawn_timer: Timer
 
 
 func _ready():
 	# connect() is getting the "timeout" signal and calling a function when the signal is emitted
-	_spawn_timer = Timer.new()
-	_spawn_timer.connect("timeout", _on_spawn_timer_timeout)
-	add_child(_spawn_timer)
+	spawn_timer = Timer.new()
+	spawn_timer.connect("timeout", _on_spawn_timer_timeout)
+	add_child(spawn_timer)
 	
 	# default config defined manually
 	configure_spawner(spawn_radius, spawn_interval)
@@ -20,15 +20,18 @@ func _ready():
 
 
 func start_spawner():	
-	_spawn_timer.start()
+	spawn_timer.start()
 
 
 func stop_spawner():
-	_spawn_timer.stop()
+	spawn_timer.stop()
 
 
 func configure_spawner(radius: float, interval: float):
-	_spawn_timer.set_wait_time(interval)
+	if (!spawn_timer.is_stopped()): spawn_timer.stop()
+	
+	spawn_timer.set_wait_time(interval)
+	spawn_radius = radius
 	print(interval)
 
 

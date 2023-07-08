@@ -1,7 +1,7 @@
 extends Actor
 
 var rotation_speed = 2.0
-@onready var player = $"res://Scenes/Player"
+@onready var player = get_parent().get_node("player")
 
 func _physics_process(delta: float) -> void:
 	rotate_to_target(player, delta)
