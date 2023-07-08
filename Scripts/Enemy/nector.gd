@@ -1,33 +1,20 @@
 extends Actor
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var rotation_speed = 2.0
+@onready var player = $"../Player"
 
 func _physics_process(delta: float) -> void:
-	get_input()
+	rotate_to_target(player, delta)
 	
 # _physics process
 # process
 	
-func get_input():
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var directionX := Input.get_axis("ui_left", "ui_right")
-	var directionY := Input.get_axis("ui_up", "ui_down")
-	if directionX:
-		velocity.x = directionX * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if directionY:
-		velocity.y = directionY * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
-	move_and_slide()
+func rotate_to_target(target, delta):
+	var direction = (target.global_position - global_position).normalized()
+	var angle_to = $Sprite2D.transform.x.angle_to(direction)
+	$Sprite2D.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))
 	
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
