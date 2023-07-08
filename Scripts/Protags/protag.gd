@@ -1,6 +1,6 @@
 extends Actor
 
-@onready var target = $"res://Scenes/Nector"
+@onready var target = $"../Nector"
 
 func _physics_process(delta): 
 	advance_on_necro()
