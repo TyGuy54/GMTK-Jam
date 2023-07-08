@@ -1,8 +1,9 @@
-extends Area2D
+extends CharacterBody2D
 
-var speed = 750
+var speed = 450
 var rotation_speed = 2.0
-var vel = Vector2.ZERO
+var target_position
+#var vel = Vector2.ZER
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
@@ -12,10 +13,17 @@ func _physics_process(delta):
 		var angle_to = $Sprite2D.transform.x.angle_to(direction)
 		$Sprite2D.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))
 		
+		target_position = (node.position - position)
+		
+		if position.distance_to(node.position) > 3:
+			move_and_slide()
+			look_at(node.position)
 		
 	
-func _on_projectile_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	$Timer.start()
 	if body.is_in_group("player"):
 		body.queue_free()
-		
+
+func _on_timer_timeout() -> void:
 	queue_free()

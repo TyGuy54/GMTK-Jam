@@ -1,10 +1,7 @@
 extends Actor
 
-@export var cooldown = 0.50
+@export var cooldown = 0.75
 @export var Bullet : PackedScene
-var rotation_speed = 2.0
-
-@onready var player = get_parent().get_node("player")
 
 var can_shoot = true
 
