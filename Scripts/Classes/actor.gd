@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Actor
 
 @export var health: int = 0
-@export var Attack: int = 0
-@export var Defense: int = 0
+@export var attack: int = 0
+@export var defense: int = 0
 
 @export var acceleration: float = 0.0
 @export var friction: float = 0.0
