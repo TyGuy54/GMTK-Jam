@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dug0txk7tb52l"]
 
 [ext_resource type="Script" path="res://Scripts/Nector/nector.gd" id="1_qgphm"]
-[ext_resource type="Texture2D" uid="uid://dxr1xwv12set0" path="res://Assets/image.png" id="2_gbp1c"]
+[ext_resource type="Texture2D" uid="uid://dgg3oh4ljlger" path="res://necro.png" id="2_bx8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_petkr"]
 size = Vector2(462, 394)
@@ -11,7 +11,7 @@ script = ExtResource("1_qgphm")
 speed = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gbp1c")
+texture = ExtResource("2_bx8ur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
