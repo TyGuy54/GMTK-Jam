@@ -11,6 +11,8 @@ func _physics_process(delta):
 		var direction = (node.global_position - global_position).normalized()
 		var angle_to = $Sprite2D.transform.x.angle_to(direction)
 		$Sprite2D.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))
+		
+		
 	
 func _on_projectile_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
