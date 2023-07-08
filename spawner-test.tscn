@@ -1,44 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5g824o1n11xu"]
 
-[sub_resource type="GDScript" id="GDScript_yy3x5"]
-script/source = "extends Node2D
-
-@export var spawn_radius: float
-@export var spawn_interval: float
-
-var _spawn_timer: Timer
-var _radius: Vector2
-	
-func _ready():
-	_radius = Vector2(spawn_radius, 0)
-	
-	_spawn_timer = Timer.new()
-	add_child(_spawn_timer)
-	
-	_spawn_timer.wait_time = spawn_interval
-	_spawn_timer.connect(\"timeout\", _on_spawn_timer_timeout)
-	_spawn_timer.start()
-
-func configure_spawner(radius: float, interval: float):
-	spawn_radius = radius
-	spawn_interval = interval
-	print(spawn_interval)
-
-func _on_spawn_timer_timeout():
-	const enemy_scene = preload(\"res://Scenes/bear_test.tscn\")
-	var enemy = enemy_scene.instantiate();
-	
-	var center_coordinates: Vector2 = get_viewport_rect().size / 2
-	var rng = RandomNumberGenerator.new()
-	var random_angle = rng.randf_range(0, 360.0)
-	var spawn_position: Vector2 = center_coordinates + _radius.rotated(random_angle * (2 * PI))
-	
-	enemy.transform.origin = spawn_position
-
-	add_child(enemy)
-"
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_w4y1n"]
 
 [node name="Spawner" type="Node2D"]
-script = SubResource("GDScript_yy3x5")
+script = ExtResource("1_w4y1n")
 spawn_radius = 300.0
-spawn_interval = 0.5
+spawn_interval = 0.01
