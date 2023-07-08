@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://ddancq0o10nyn"]
+[gd_scene load_steps=2 format=3 uid="uid://ddancq0o10nyn"]
+
+[ext_resource type="PackedScene" uid="uid://dk3t26ybkxl08" path="res://test.tscn" id="1_34cqg"]
 
 [node name="poopy_butt" type="Node2D"]
+
+[node name="test" parent="." instance=ExtResource("1_34cqg")]
