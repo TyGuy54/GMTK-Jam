@@ -20,3 +20,4 @@ func shoot():
 	# adds the node as a child 
 	add_child(b)
 	b.transform = $Marker2D.global_transform
+	

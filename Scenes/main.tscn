@@ -7,6 +7,11 @@
 
 [node name="necto" parent="." instance=ExtResource("1_0b3ls")]
 position = Vector2(235, 549)
+health = 0
+attack = 0
+defense = 0
+acceleration = 0.0
+friction = 0.0
 
 [node name="Player" parent="." instance=ExtResource("2_w0ing")]
 position = Vector2(860, 792)
