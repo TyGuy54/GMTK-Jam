@@ -13,10 +13,9 @@ func handle_attack():
 
 func move_player(direction, delta):
 	var screen_size = get_viewport_rect().size
-#	var sprite_x = $Sprite.texture.get_width()/ 2.0 
-#	var sprite_y = $Sprite.texture.get_height() / 2.0  
-	var sprite_x = 50
-	var sprite_y = 50
+
+	var sprite_x = $Sprite2D.texture.get_width() / 2.0 
+	var sprite_y = $Sprite2D.texture.get_height() / 2.0  
 	
 	if direction.length() > 0:
 		# applys acceleration to the x axis

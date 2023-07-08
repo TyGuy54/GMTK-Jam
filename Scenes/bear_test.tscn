@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7bhgw23gjt04"]
 
-[ext_resource type="Texture2D" uid="uid://dcjs4cx8wak85" path="res://icon.svg" id="1_yj5jh"]
+[ext_resource type="Texture2D" uid="uid://dvxo71eom2rlu" path="res://Assets/bob_the_bear.jpg" id="1_gl1d7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_daq0p"]
 size = Vector2(834, 620)
@@ -8,7 +8,7 @@ size = Vector2(834, 620)
 [node name="Bear_test" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yj5jh")
+texture = ExtResource("1_gl1d7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 6)
