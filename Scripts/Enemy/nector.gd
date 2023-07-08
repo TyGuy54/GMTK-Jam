@@ -27,8 +27,7 @@ func get_input():
 
 	move_and_slide()
 	
-<<<<<<< HEAD
-=======
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	pass
->>>>>>> a7dd0d4aa9e5ad7f80ca3671e401a72d71c28ffe
+
