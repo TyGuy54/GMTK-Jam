@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=3 format=3 uid="uid://dng1vn0k3rpxu"]
-=======
-[gd_scene load_steps=4 format=3 uid="uid://dug0txk7tb52l"]
->>>>>>> 4968550a3d5203a93a8b3b3fbfec0d556dbcc5ca
+[gd_scene load_steps=4 format=3 uid="uid://bpy3qcgwewn0s"]
 
 [ext_resource type="PackedScene" uid="uid://dug0txk7tb52l" path="res://Scenes/Nector/Nector.tscn" id="1_0b3ls"]
 [ext_resource type="PackedScene" uid="uid://c4jppx37xwi01" path="res://Scenes/Player/player.tscn" id="2_w0ing"]
