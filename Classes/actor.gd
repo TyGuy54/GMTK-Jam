@@ -9,14 +9,17 @@ class_name Actor
 @export var friction: float = 0.0
 @export var speed: int = 0
 
+# this function handles actor movment
 func move_actor(direction, delta):
 	if direction.length() > 0:
+		# applys acceleration to the x axis
 		velocity.x = move_toward(
 			velocity.x, 
 			direction.normalized().x * speed, 
 			acceleration * delta
 		)
 		
+		# applys acceleration to the Y axis
 		velocity.y = move_toward(
 			velocity.y, 
 			direction.normalized().y * speed, 
@@ -24,7 +27,9 @@ func move_actor(direction, delta):
 		)
 		
 	else:
+		# applys friction to the x axis
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
+		# applys friction to the y axis
 		velocity.y = move_toward(velocity.y, 0, friction * delta)
 		
 	move_and_slide()
