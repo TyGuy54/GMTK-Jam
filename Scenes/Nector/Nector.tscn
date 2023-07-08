@@ -1,18 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dug0txk7tb52l"]
+[gd_scene load_steps=5 format=3 uid="uid://dug0txk7tb52l"]
 
 [ext_resource type="Script" path="res://Scripts/Nector/nector.gd" id="1_qgphm"]
-[ext_resource type="Texture2D" uid="uid://dfev52nhkl7th" path="res://Assets/necro.png" id="2_w2udb"]
+[ext_resource type="PackedScene" uid="uid://b3ccegneval05" path="res://Scenes/Nector/projectile.tscn" id="2_b2mnk"]
+[ext_resource type="Texture2D" uid="uid://dgg3oh4ljlger" path="res://necro.png" id="2_bx8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_petkr"]
-size = Vector2(462, 394)
+size = Vector2(341, 332)
 
 [node name="necto" type="CharacterBody2D"]
 script = ExtResource("1_qgphm")
+Bullet = ExtResource("2_b2mnk")
 speed = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_w2udb")
+texture = ExtResource("2_bx8ur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(4.5, -1)
 shape = SubResource("RectangleShape2D_petkr")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(328, -101)
+
+[node name="Projectile_Cooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="Projectile_Cooldown" to="." method="_on_projectile_cooldown_timeout"]
