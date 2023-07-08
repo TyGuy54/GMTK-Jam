@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpy3qcgwewn0s"]
+
+[ext_resource type="PackedScene" uid="uid://dug0txk7tb52l" path="res://Scenes/Nector/Nector.tscn" id="1_0b3ls"]
+[ext_resource type="PackedScene" uid="uid://c4jppx37xwi01" path="res://Scenes/Player/player.tscn" id="2_w0ing"]
+[ext_resource type="PackedScene" uid="uid://cdo2nrrd33kth" path="res://Scenes/Protags/protag.tscn" id="4_tklmc"]
+
+[node name="main" type="Node2D"]
+position = Vector2(549, 353)
+
+[node name="nector" parent="." instance=ExtResource("1_0b3ls")]
+
+[node name="player" parent="." instance=ExtResource("2_w0ing")]
+position = Vector2(-402, -79)
+
+[node name="protag" parent="." instance=ExtResource("4_tklmc")]
