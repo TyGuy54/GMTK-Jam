@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddoytg5uilqnq"]
+[gd_scene load_steps=3 format=3 uid="uid://dng1vn0k3rpxu"]
 
-[ext_resource type="PackedScene" uid="uid://dug0txk7tb52l" path="res://Scenes/Enemy/necto.tscn" id="1_0b3ls"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy/necto.tscn" id="1_0b3ls"]
 [ext_resource type="PackedScene" uid="uid://c4jppx37xwi01" path="res://Scenes/Player/player.tscn" id="2_w0ing"]
 
 [node name="main" type="Node2D"]
