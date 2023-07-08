@@ -1,12 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://l2c2dqjbloom"]
 
 [ext_resource type="PackedScene" uid="uid://dug0txk7tb52l" path="res://Scenes/Nector/Nector.tscn" id="1_0b3ls"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://c4jppx37xwi01" path="res://Scenes/Protags/player.tscn" id="2_w0ing"]
-[ext_resource type="PackedScene" uid="uid://cdo2nrrd33kth" path="res://Scenes/Protags/protag.tscn" id="4_tklmc"]
-=======
+
 [ext_resource type="PackedScene" uid="uid://c4jppx37xwi01" path="res://Scenes/Player/player.tscn" id="2_w0ing"]
->>>>>>> 1ea331537d466667d25aac8cf3709900b27dba2b
 
 [node name="main" type="Node2D"]
 
