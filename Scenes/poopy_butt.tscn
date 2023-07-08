@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://ddancq0o10nyn"]
+[gd_scene load_steps=3 format=3 uid="uid://bvpp2bu401kyp"]
+
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="1_2mhmg"]
+[ext_resource type="PackedScene" uid="uid://b2vbrfswj15aq" path="res://Scenes/actor.tscn" id="2_5tfki"]
 
 [node name="poopy_butt" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("1_2mhmg")
+
+[node name="Actor" parent="." instance=ExtResource("2_5tfki")]
+position = Vector2(388.675, -60.948)

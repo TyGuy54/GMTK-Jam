@@ -7,6 +7,9 @@ const JUMP_VELOCITY = -400.0
 func _physics_process(delta: float) -> void:
 	get_input()
 	
+# _physics process
+# process
+	
 func get_input():
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -25,4 +28,4 @@ func get_input():
 	move_and_slide()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	take_damage(body)
+	pass
