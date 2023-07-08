@@ -6,8 +6,6 @@ var rotation_speed = 2.0
 func _physics_process(delta: float) -> void:
 	rotate_to_target(player, delta)
 	
-# _physics process
-# process
 	
 func rotate_to_target(target, delta):
 	var direction = (target.global_position - global_position).normalized()
