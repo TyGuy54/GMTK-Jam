@@ -1,16 +1,21 @@
 extends Actor
 
-var rotation_speed = 2.0
-@onready var player = $"../Player"
+@export var Bullet : PackedScene
 
 func _physics_process(delta: float) -> void:
-	rotate_to_target(player, delta)
+	pass
 	
-	
-func rotate_to_target(target, delta):
-	var direction = (target.global_position - global_position).normalized()
-	var angle_to = $Sprite2D.transform.x.angle_to(direction)
-	$Sprite2D.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func spot_nearest_enemy():
+	# loops over the groups array
+	for node in get_tree().get_nodes_in_group("replace_with_zanes_group"):
+		# finds the nearest position of something in that group relitive to the necromancer
+		if node.position == self.position:
+			# if it is then the necromancer shoots
+			shoot()
+			
+func shoot():
+	# instanciantes the bullet sceane
+	var b = Bullet.instantiate()
+	# adds the node as a child 
+	add_child(b)
+#	b.transform = $Marker2D.global_transform

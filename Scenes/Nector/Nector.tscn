@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dug0txk7tb52l"]
+[gd_scene load_steps=5 format=3 uid="uid://dug0txk7tb52l"]
 
 [ext_resource type="Script" path="res://Scripts/Nector/nector.gd" id="1_qgphm"]
+[ext_resource type="PackedScene" uid="uid://b3ccegneval05" path="res://Scenes/Nector/projectile.tscn" id="2_b2mnk"]
 [ext_resource type="Texture2D" uid="uid://dgg3oh4ljlger" path="res://necro.png" id="2_bx8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_petkr"]
@@ -8,11 +9,13 @@ size = Vector2(462, 394)
 
 [node name="necto" type="CharacterBody2D"]
 script = ExtResource("1_qgphm")
+Bullet = ExtResource("2_b2mnk")
 speed = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_bx8ur")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_petkr")
