@@ -48,5 +48,5 @@ func _on_spawn_timer_timeout():
 	var spawn_position: Vector2 = center_coordinates + rotated
 	
 	enemy.transform.origin = spawn_position
-	enemy.add_to_group("protags")
+#	enemy.add_to_group("Protag")
 	add_child(enemy)
