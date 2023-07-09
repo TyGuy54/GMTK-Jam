@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dcjs4cx8wak85" path="res://icon.svg" id="1_gpyem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4e0i"]
-size = Vector2(126, 126)
+size = Vector2(44.5, 45.5)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(490, 490)
@@ -16,7 +16,10 @@ speed = 600
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0.403922, 0.407843, 1)
+position = Vector2(-274, -274.5)
+scale = Vector2(0.328125, 0.382812)
 texture = ExtResource("1_gpyem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-274, -275)
 shape = SubResource("RectangleShape2D_v4e0i")

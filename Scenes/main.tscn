@@ -11,7 +11,7 @@
 [node name="necto" parent="." instance=ExtResource("1_0b3ls")]
 
 [node name="Player" parent="." instance=ExtResource("2_w0ing")]
-position = Vector2(93, 771)
+position = Vector2(114, 762)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(500, 500)
