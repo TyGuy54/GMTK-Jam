@@ -21,7 +21,7 @@ func move_player(direction, delta):
 		# applys acceleration to the x axis
 		velocity.x = move_toward(
 			velocity.x, 
-			direction.normalized().x * speed, 
+			direction.normalized().x * speed,
 			acceleration * delta
 		)
 		
