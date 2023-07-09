@@ -7,7 +7,7 @@ class_name Actor
 
 @export var acceleration: float = 0.0
 @export var friction: float = 0.0
-@export var speed: int = 100
+@export var speed: int = 10
 
 # this function handles actor movment
 func move_actor(direction, delta):

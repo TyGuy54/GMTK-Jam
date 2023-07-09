@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 450
+var speed = 200
 var rotation_speed = 2.0
 var target_position
 #var vel = Vector2.ZER
@@ -8,7 +8,7 @@ var target_position
 func _physics_process(delta):
 	position += transform.x * speed * delta
 	
-	for node in get_tree().get_nodes_in_group("player"):
+	for node in get_tree().get_nodes_in_group("Protag"):
 		var direction = (node.global_position - global_position).normalized()
 		var angle_to = $Sprite2D.transform.x.angle_to(direction)
 		$Sprite2D.rotate(sign(angle_to) * min(delta * rotation_speed, abs(angle_to)))

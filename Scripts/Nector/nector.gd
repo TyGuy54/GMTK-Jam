@@ -19,7 +19,7 @@ func start():
 	
 func spot_nearest_enemy():
 	# loops over the groups array
-	for node in get_tree().get_nodes_in_group("player"):
+	for node in get_tree().get_nodes_in_group("Protag"):
 		# finds the nearest position of something in that group relitive to the necromancer
 		if node.position >= self.position:
 			# if it is then the necromancer shoots
