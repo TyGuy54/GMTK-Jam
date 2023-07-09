@@ -3,9 +3,9 @@ class_name Actor
 
 enum {alive, fucked_up, they_undead}
 
-@export var health: int = 0
-@export var attack: int = 0
-@export var defense: int = 0
+@export var health: int = 100
+@export var attack: int = 20
+@export var defense: int = 10
 
 @export var acceleration: float = 0.0
 @export var friction: float = 0.0
