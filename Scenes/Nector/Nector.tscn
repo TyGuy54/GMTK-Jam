@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dug0txk7tb52l"]
 
 [ext_resource type="Script" path="res://Scripts/Nector/nector.gd" id="1_qgphm"]
-[ext_resource type="PackedScene" uid="uid://b3ccegneval05" path="res://Scenes/Nector/projectile.tscn" id="2_b2mnk"]
+[ext_resource type="PackedScene" path="res://Scenes/Nector/projectile.tscn" id="2_b2mnk"]
 [ext_resource type="Texture2D" uid="uid://dgg3oh4ljlger" path="res://necro.png" id="2_bx8ur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_petkr"]
