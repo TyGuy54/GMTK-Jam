@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fo5o2"]
 
 [node name="protag" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_6uwhw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

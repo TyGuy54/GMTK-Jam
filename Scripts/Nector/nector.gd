@@ -6,6 +6,8 @@ extends Actor
 var can_shoot = true
 
 func _ready():
+	var center_coordinates: Vector2 = get_viewport_rect().size / 2
+	self.transform.origin = center_coordinates
 	start()
 
 func _process(delta: float) -> void:
