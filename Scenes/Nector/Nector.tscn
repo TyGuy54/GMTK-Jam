@@ -116,7 +116,7 @@ _data = {
 "little_dude": SubResource("Animation_dpjy7")
 }
 
-[node name="necto" type="CharacterBody2D"]
+[node name="necto" type="CharacterBody2D" groups=["Nector"]]
 script = ExtResource("1_qgphm")
 Bullet = ExtResource("2_b2mnk")
 speed = 300
