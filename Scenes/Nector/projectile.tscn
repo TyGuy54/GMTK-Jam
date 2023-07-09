@@ -1,35 +1,151 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3ccegneval05"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ccegneval05"]
 
 [ext_resource type="Script" path="res://Scenes/Nector/projectile.gd" id="1_swsoj"]
-[ext_resource type="Texture2D" uid="uid://dcjs4cx8wak85" path="res://icon.svg" id="2_2q0fw"]
+[ext_resource type="Texture2D" uid="uid://ddf32pa7cuf8u" path="res://Assets/burning_loop_1.png" id="2_415mg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q8ld"]
-size = Vector2(120, 25)
+size = Vector2(17.5, 20.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj45q"]
-size = Vector2(144, 37)
+size = Vector2(19, 22)
 
-[node name="projectile" type="CharacterBody2D" groups=["Projectile"]]
+[sub_resource type="Animation" id="Animation_d2ygx"]
+resource_name = "necro_attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_415mg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 3, 1, 2, 4, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_gtmf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_415mg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gduo"]
+_data = {
+"RESET": SubResource("Animation_gtmf4"),
+"necro_attack": SubResource("Animation_d2ygx")
+}
+
+[node name="projectile" type="CharacterBody2D" groups=["projectile"]]
 script = ExtResource("1_swsoj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 3)
-scale = Vector2(1, 0.210938)
-texture = ExtResource("2_2q0fw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_7q8ld")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(11, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 2.5)
+position = Vector2(-12, -5)
 shape = SubResource("RectangleShape2D_aj45q")
 debug_color = Color(0.94902, 0, 0.572549, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3gduo")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(1, 0.917969)
+texture = ExtResource("2_415mg")
+hframes = 8
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

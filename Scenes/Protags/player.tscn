@@ -10,6 +10,8 @@ size = Vector2(44.5, 45.5)
 position = Vector2(490, 490)
 motion_mode = 1
 script = ExtResource("1_8l274")
+acceleration = 1000.0
+friction = 1000.0
 speed = 600
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

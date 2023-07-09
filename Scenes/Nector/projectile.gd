@@ -3,7 +3,11 @@ extends CharacterBody2D
 var speed = 200
 var rotation_speed = 2.0
 @export var projectile_despawn_distance = 400
+@onready var animation = $"AnimationPlayer"
 
+
+func _ready():
+	animation.play("necro_attack")
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
