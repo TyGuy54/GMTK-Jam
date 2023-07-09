@@ -36,7 +36,7 @@ func configure_spawner(radius: float, interval: float):
 
 
 func _on_spawn_timer_timeout():
-	const enemy_scene = preload("res://Scenes/bear_test.tscn")
+	var enemy_scene = load("res://Scenes/Protags/protag.tscn")
 	var enemy = enemy_scene.instantiate();
 	
 	var center_coordinates: Vector2 = get_viewport_rect().size / 2
@@ -48,5 +48,5 @@ func _on_spawn_timer_timeout():
 	var spawn_position: Vector2 = center_coordinates + rotated
 	
 	enemy.transform.origin = spawn_position
-	
+	enemy.add_to_group("protags")
 	add_child(enemy)
