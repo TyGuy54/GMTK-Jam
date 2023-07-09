@@ -9,7 +9,10 @@
 [node name="Spawner" parent="." instance=ExtResource("1_448xq")]
 
 [node name="necto" parent="." instance=ExtResource("1_0b3ls")]
-position = Vector2(199, 425)
 
 [node name="Player" parent="." instance=ExtResource("2_w0ing")]
 position = Vector2(93, 771)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(500, 500)
+zoom = Vector2(2, 2)

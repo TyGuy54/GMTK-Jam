@@ -4,9 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://b3ccegneval05" path="res://Scenes/Nector/projectile.tscn" id="2_b2mnk"]
 [ext_resource type="Texture2D" uid="uid://i4tq2xxeyy5k" path="res://Assets/AnimationSheet_Character.png" id="3_gy8he"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_petkr"]
-size = Vector2(64.4375, 66.75)
-
 [sub_resource type="Animation" id="Animation_6xy87"]
 length = 0.001
 tracks/0/type = "value"
@@ -116,7 +113,10 @@ _data = {
 "little_dude": SubResource("Animation_dpjy7")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tk60"]
+
 [node name="necto" type="CharacterBody2D" groups=["Nector"]]
+motion_mode = 1
 script = ExtResource("1_qgphm")
 Bullet = ExtResource("2_b2mnk")
 speed = 300
@@ -128,14 +128,6 @@ texture = ExtResource("3_gy8he")
 hframes = 8
 vframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
-shape = SubResource("RectangleShape2D_petkr")
-one_way_collision_margin = 0.0
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(328, -101)
-
 [node name="Projectile_Cooldown" type="Timer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -143,5 +135,8 @@ autoplay = "little_dude"
 libraries = {
 "": SubResource("AnimationLibrary_dw86i")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5tk60")
 
 [connection signal="timeout" from="Projectile_Cooldown" to="." method="_on_projectile_cooldown_timeout"]

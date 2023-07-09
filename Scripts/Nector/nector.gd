@@ -21,7 +21,7 @@ func start():
 	$Projectile_Cooldown.wait_time = cooldown
 
 var closest_protag = null
-var min_distance = Vector2(INF, INF)
+var min_distance = INF
 
 func shoot_nearest_enemy():
 	var protags = get_tree().get_nodes_in_group("Protag")
@@ -33,7 +33,7 @@ func shoot_nearest_enemy():
 		if (closest_protag == null):
 			closest_protag = protag
 
-		var current_distance = position - protag.position
+		var current_distance = protag.global_position.distance_to(global_position)
 
 		if (current_distance < min_distance):
 			min_distance = current_distance
