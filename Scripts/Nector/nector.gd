@@ -2,6 +2,7 @@ extends Actor
 
 @export var cooldown = 0.75
 @export var Bullet : PackedScene
+@onready var animation = $"AnimationPlayer"
 
 var can_shoot = true
 
@@ -12,7 +13,7 @@ func _ready():
 
 func _process(delta: float) -> void:
 	spot_nearest_enemy()
-	
+	animation.play("little_dude")
 func start():
 	$Projectile_Cooldown.wait_time = cooldown
 	
