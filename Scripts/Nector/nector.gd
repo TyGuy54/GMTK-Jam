@@ -9,11 +9,12 @@ var can_shoot = true
 func _ready():
 	var center_coordinates: Vector2 = get_viewport_rect().size / 2
 	self.transform.origin = center_coordinates
+	animation.play("little_dude")
 	start()
 
 func _process(delta: float) -> void:
 	spot_nearest_enemy()
-	animation.play("little_dude")
+#	animation.play("little_dude")
 func start():
 	$Projectile_Cooldown.wait_time = cooldown
 	

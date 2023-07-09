@@ -8,6 +8,12 @@
 [node name="protag" type="CharacterBody2D" groups=["Protag"]]
 motion_mode = 1
 script = ExtResource("1_6uwhw")
+health = null
+attack = null
+defense = null
+acceleration = null
+friction = null
+speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qtrkp")
