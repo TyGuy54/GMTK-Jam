@@ -14,6 +14,7 @@ func advance_on_necro(delta):
 		position = position.move_toward(necro.global_position, delta * speed)
 
 func _on_area_2d_body_entered(body: CharacterBody2D):
-	if (body.is_in_group("Projectile")):
+	print(body.get_groups())
+	if (body.is_in_group("projectile")):
 		take_damage(100)
 		# animation transition here
