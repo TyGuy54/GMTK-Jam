@@ -1,8 +1,6 @@
 #extends Actor
 #
-#@export var node_path: String
 ##@onready var target = get_node(node_path)
-#var target
 #
 #func _ready():
 #	var target = preload("res://Scenes/Nector/Nector.tscn").instantiate()
@@ -16,4 +14,6 @@
 #	move_and_slide()
 
 extends Actor
+
+
 
